@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiple</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<?php
 
+    include("conexion.php");
     
-</head>
-<body>
-    
-</body>
-</html>
+
+    $name= $_REQUEST['name'];
+    $image= $_FILES['image']['name'];
+    $archivo = $_FILES['image']['tmp_name'];
+    $ruta="images";
+
+    $ruta=$ruta."/".$name;
+
+    move_uploaded_file($archivo,$ruta);
+
+    $sql="insert into gallery (title,images)values('".$name."','".$ruta."')";
+    $query=mysqli_query($conn,$sql);
+
+    if($query){
+        echo "Insert correct";
+    }
+    else{
+        echo "insert incorrect";
+    }
+
+?>

@@ -31,7 +31,7 @@
 
 			if (!file_exists($directorio)){
 
-				mkdir($directorio, 0755);
+				mkdir($directorio, 777);
 			
 			}
 

@@ -10,10 +10,11 @@
         <table border="2">
             <thead>
 
-                <tr>id</tr>
-                <tr>title</tr>
-                <tr>imagen</tr>
-
+                <tr>
+                    <td>id</td>
+                    <td>title</td>
+                    <td>images</td>
+                </tr>
             </thead>
             <tbody>
             
@@ -28,7 +29,18 @@
                         <tr>
                             <td><?php echo $row['id'];?></td>
                             <td><?php echo $row['title'];?></td>
-                            <td><?php echo '<img src="'.$row['images'].'">';?></td>
+                            <td>
+                                <div>
+
+                                    <?php 
+                                    
+                                        print "<img src=".$row['images']." heigth='200px' width='150px'>";
+
+                                    ?>
+                                </div>
+                            
+                            
+                            </td>
 
 
                         </tr>
