@@ -17,6 +17,8 @@
 
     if($query){
         echo "Insert correct";
+        echo "<br><a class='text-primary' href='./insert.php' >ok</a>";
+        
     }
     else{
         echo "insert incorrect";
